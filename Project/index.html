@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>暖屿 · AI 情感陪伴</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="chat-panel" aria-label="聊天">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Warm Islet</p>
+            <h1>暖屿</h1>
+          </div>
+          <div class="status-pill">
+            <span class="pulse"></span>
+            陪伴中
+          </div>
+        </header>
+
+        <div id="messageList" class="message-list" aria-live="polite"></div>
+
+        <form id="chatForm" class="composer">
+          <textarea id="messageInput" rows="1" placeholder="说说此刻正在发生什么..." required></textarea>
+          <button id="sendButton" type="submit" title="发送" aria-label="发送">
+            <span>➜</span>
+          </button>
+        </form>
+      </section>
+
+      <aside class="side-panel" aria-label="记忆管理">
+        <section class="mood-card">
+          <p class="section-label">当前情绪</p>
+          <div id="emotionBadge" class="emotion-badge">等待倾听</div>
+          <p id="moodNote" class="mood-note">我会先听你说，再慢慢回应。</p>
+        </section>
+
+        <section class="memory-panel">
+          <div class="panel-head">
+            <div>
+              <p class="section-label">长期记忆</p>
+              <h2>我记住的你</h2>
+            </div>
+            <button id="clearMemoryButton" class="icon-button" type="button" title="清空记忆" aria-label="清空记忆">⌫</button>
+          </div>
+          <div id="memoryList" class="memory-list"></div>
+        </section>
+
+        <section class="checks">
+          <p class="section-label">MVP 验证</p>
+          <div class="check-row"><span></span> 连续多轮对话</div>
+          <div class="check-row"><span></span> 情绪识别与共情</div>
+          <div class="check-row"><span></span> 自动记忆与召回</div>
+        </section>
+      </aside>
+    </main>
+
+    <template id="messageTemplate">
+      <article class="message">
+        <div class="avatar"></div>
+        <div>
+          <div class="meta"></div>
+          <div class="bubble"></div>
+        </div>
+      </article>
+    </template>
+
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+model = "gpt-5.5"
+
+model_provider = "openai_http"
+approval_policy = "never"       # 从 "on-request" 改成 "never"
+sandbox_mode = "danger-full-access"  # 新增/修改这一行
+model_reasoning_effort = "high"
+
+[model_providers.openai_http]
+name = "OpenAI HTTP only"
+wire_api = "responses"
+requires_openai_auth = true
+supports_websockets = false
+api_key = "sk-cfiy8eujRrwdMra96Bg5HAoV6cPrENDJombIbQSLXqfMmxIp"
+base_url = "https://www.aimapi.cloud/v1"
+
+
