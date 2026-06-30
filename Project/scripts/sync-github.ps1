@@ -2,7 +2,7 @@ param(
   [string]$Message = "",
   [string]$Remote = "origin",
   [string]$Branch = "",
-  [string[]]$Pathspec = @("Project", ".ai", "Agent.md", ".gitignore"),
+  [string[]]$Pathspec = @("Project", ".ai", "Agent.md", ".gitignore", "vercel.json"),
   [switch]$SkipTests,
   [switch]$AllowConfig
 )
